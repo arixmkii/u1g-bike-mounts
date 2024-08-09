@@ -3,7 +3,7 @@ use <GoProScad/GoPro.scad>
 
 include <JointSCAD/JointSCAD.scad>
 
-dn = 6;
+dn = 8;
 dr = 1.6;
 
 for (i = [0:1]) {
@@ -28,8 +28,11 @@ difference() {
     }
     
     union() {
-        rotate([180, 0, 0]) translate([0, 0, -6]) cylinder(7.1, 2.05, 2.05, $fn=120);
         translate([0, 0, 6]) cylinder(1.75, 2.05, 0, $fn=120);
+        rotate([180, 0, 0]) translate([0, 0, -6]) cylinder(7.1, 2.05, 2.05, $fn=120);
+        rotate([180, 0, 0]) translate([0, 0, -4]) cylinder(5.1, 2.2, 2.2, $fn=120);
+        rotate([180, 0, 0]) translate([0, 0, -1.5]) cylinder(1.6, 2.4, 2.4, $fn=120);
+        translate([0, 0, -0.2]) cylinder(3, 2.7, 0, $fn=120);
         
         for (i = [0:1]) {
             rotate([0, 0, 180 * i]) rotate([180, 0, 0]) translate([5.97, 0, -2]) dowel(dn, dr, 4);
