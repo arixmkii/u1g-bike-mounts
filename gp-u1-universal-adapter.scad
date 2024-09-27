@@ -3,14 +3,6 @@ use <GoProScad/GoPro.scad>
 
 include <JointSCAD/JointSCAD.scad>
 
-dn = 8;
-dr = 1.6;
-
-for (i = [0:1]) {
-    rotate([0, 0, 180 * i]) translate([15, 0, 0]) dowel(dn, dr, 2);
-    rotate([0, 0, 180 * i]) translate([15, 0, 1.75]) cylinder(1, 0.97, 0.97, $fn=120);
-};
-
 difference() {
     union() {
         translate([0, 0, 0.5]) gopro_mount_m(
@@ -35,7 +27,7 @@ difference() {
         translate([0, 0, -0.2]) cylinder(3, 2.7, 0, $fn=120);
         
         for (i = [0:1]) {
-            rotate([0, 0, 180 * i]) rotate([180, 0, 0]) translate([5.97, 0, -2]) dowel(dn, dr, 4);
+            rotate([0, 0, 180 * i]) rotate([180, 0, 0]) translate([5.97, 0, -5.35]) cylinder(6, 0.75, 0.75, $fn=120);
         };
     }
 }
